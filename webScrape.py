@@ -1,7 +1,9 @@
+'''
+Webscraper that was used to retrieve all the names, addresses and coordinates of all the farmers markets used within our map 
+'''
 from bs4 import BeautifulSoup 
 import requests
 import re
-
 url = requests.get("https://www.farmersmarketsontario.com/find-a-farmers-market/").content
 pageContent = BeautifulSoup(url, "lxml")
 pageInfo = pageContent.find("tbody")
@@ -27,4 +29,3 @@ for link in hrefList:
 	pageContent = BeautifulSoup(url, "lxml").find("tbody")
 	fullAddress = re.findall(r'<td>.*</td>',re.findall(r'Address.*?</td>',str(pageContent))[0].replace("<br/>", ""))[0].replace("<td>","").replace("</td>","")
 	fAddress.append(fullAddress)
-print(fAddress)
