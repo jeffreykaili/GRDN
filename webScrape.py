@@ -24,8 +24,11 @@ for each in coordPos:
 	hrefList.append(href)
 #Full Address Handling
 fAddress = []
+cnt = 0
 for link in hrefList:
 	url = requests.get("https://www.farmersmarketsontario.com/" + link).content
 	pageContent = BeautifulSoup(url, "lxml").find("tbody")
 	fullAddress = re.findall(r'<td>.*</td>',re.findall(r'Address.*?</td>',str(pageContent))[0].replace("<br/>", ""))[0].replace("<td>","").replace("</td>","")
 	fAddress.append(fullAddress)
+	cnt += 1
+	print(cnt)
