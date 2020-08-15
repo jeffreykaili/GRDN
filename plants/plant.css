@@ -1,0 +1,38 @@
+.margin-bottom{
+  margin-bottom: 50px;
+}
+#hero {
+  width: 100%;
+  height: 10vh;
+  margin-top: 0px;
+}
+h1, figcaption{
+  color: white !important;
+  font-family: 'Raleway', sans-serif !important;
+}
+h4{
+  color: #CCC
+}
+.custom-column {
+  float: left;
+  width: 33.33%;
+  padding: 25px;
+}
+.custom-row::after {
+  content: "";
+  clear: both;
+  display: table;
+} 
+@media (max-width: 768px) {
+  .custom-column {
+    width: 100%;
+  }
+}
+figcaption{
+  text-align: center;
+  font-size: 150%;
+  font-weight: 600;
+}
+main img{
+  box-shadow: 0px 0px 15px rgb(0,0,0,0.5);
+}

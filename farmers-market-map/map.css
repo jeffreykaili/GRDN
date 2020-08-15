@@ -1,0 +1,62 @@
+
+#myMap {
+  width: 90vw !important; 
+  height: 80vh !important; 
+}
+
+body{margin:0;padding:0;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}
+
+html {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    color: #707070;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.map {
+    bottom: 0;
+    left: 25%;
+    position: absolute;
+    top: 0;
+    width: 75%;
+    z-index: -1;
+}
+*/
+.control-panel {
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 25%;
+}
+
+.heading {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    position: relative;
+    z-index: 1;
+}
+
+.heading > img {
+    height: auto;
+    margin: 10px 0 8px 0;
+    width: 150px;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>GRDN - Map</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+  <style type='text/css'>body{margin:0;padding:0;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}</style>
+	<meta content="" name="description">
+	<meta content="" name="keywords">
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="../assets/img/favicon.ico">
+	<link rel="icon" type="image/png" href="../assets/img/favicon.png" sizes="192x192">
+	<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/grdn-logo.png">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+	 rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
+	<!-- Vendor CSS Files -->
+	<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+	<link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+	<link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+	<link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+
+	<!-- Template Main CSS File -->
+	<link href="../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+	<header id="header" class="fixed-top d-flex align-items-center">
+		<div class="container d-flex align-items-center">
+
+			<div class="logo mr-auto">
+				<a href="../../index.html"><img class="square center" src="../../assets/img/logo.png" alt="GRDN logo" width="160px" height="60px"></a>
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li><a href="../../index.html" class="montserrat">Home</a></li>
+          <li><a href="../farmers-market-map/map.html">Find a Farmers Market</a></li>
+          <li class="drop-down montserrat"><a href="">Plants</a>
+            <ul>
+              <li><a href="../plants/corn/corn.html">Corn</a></li>
+              <li><a href="../plants/tomatoes/tomatoes.html">Tomatoes</a></li>
+              <li><a href="../plants/onions/onions.html">Onions</a></li>
+              <li><a href="../plants/carrots/carrots.html">Carrots</a></li>
+              <li><a href="../plants/lettuce/lettuce.html">Lettuce</a></li>
+              <li><a href="../plants/bell-peppers/bell-peppers.html">Bell Peppers</a></li>
+              <li><a href="../plants/radishes/radishes.html">Radishes</a></li>
+              <li><a href="../plants/pole-beans/pole-beans.html">Pole Beans</a></li>
+              <li><a href="../plants/cabbage/cabbage.html">Cabbage</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+  <div id='printoutPanel'></div>
+  
+  <div id='myMap' style='width: 100vw; height: 100vh; margin-top: 22px;'></div>
+  <script type='text/javascript'>
+      function loadMapScenario() {
+          var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+              center: new Microsoft.Maps.Location(43.5890, -79.6441),
+              mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+              zoom: 10
+          });
+      }
+  </script>
+  <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=Ahsu5BaiR3v2jW7wo736L_-Jgj1Hg3OIJHy-hrMY3SR7eZJxwe9dSPv-fIlFxJ1l
+&callback=loadMapScenario' async defer></script>
+  
+  <script type='text/javascript'>
+      var names = ["Lion's Farmers Market", 'Lions Farmers Market', 'Erin Mills Farmers Market', "Port Credit's Farmers Market", 'Mississauga Flea Market', "Etobicoke Civic Centre Farmers' Market", "Herridge's Farm Fresh Market", 'Dorval Crossing Civitan Farmers Market', "Humber Bay Shores Farmers' Market", "Sorauren Farmers' Market", "Montgomery's Inn Farmer's Market", "Annette Village Farmers' Market", 'The Junction Farmers Market', 'Erin Mills Farmers Market', "Stonegate Farmers' Market", "Weston Farmers' Market", "Milton Farmers' Market", 'Downtown Georgetown Farmers Market', 'Woodbridge Village Farmers Market', "Allison's Farm Market", 'The Country Apple Store', "Cornwall Kinsmen Farmers' Market - CLOSED IN 2020", "Bobcaygeon Farmers' Market - Closed in 2020", "Renfrew Farmers' Market - Closed in 2020", "Alexandria Farmers' Market - Closed in 2020", "Township of Athens Farmers' Market - CLOSED IN 2020", "Bancroft Farmers' Market - CLOSED IN 2020", 'Constance Bay Community Market', "North Gower Farmers' Market - CLOSED IN 2020", "Fenelon Falls Farmers' Market", "Peterborough Regional Farmers' Market", "Maxville Farmers' Market", 'Ottawa Parkdale Market', "Lindsay Farmers' Market (Victoria Park)", "Lindsay Farmers' Market (Wilson Field)", "Codrington Farmers' Market", 'Ottawa ByWard Market', "Kemptville Farmer's Market", "Peterborough Wednesday Farmers' Market", "Brockville Farmers' Market", "Pembroke Farmers' Market", "Kinmount Farmers' Market", "Carp Farmers' Market", "Combermere Farmers' Market", 'West Market - Online Store Pickup', "Cumberland Farmers' Market", "Seaway Valley Growers Farmers' Market", "Port Hope Farmers' Market", 'Carleton Place Farmers Market', "Eganville Farmers' Market", 'Deep River Town Hall', "Port Perry Lakefront Farmers' Market", "Haliburton Farmers' Market - Haliburton", "Haliburton Farmers' Markets - Minden Location", "Haliburton Farmers' Market - Stanhope Location", "Perth Farmers' Market", "Memorial Center Farmers' Market", 'Havelock Farmers & Artisan Market', "Lakefield Farmers' Market", "Main Farmers' Market", "Barry's Bay Farmers' Market", "Campbellford Farmers' Market", "Frontenac Farmers' Market", "Ottawa Organic Farmers' Market", "Metcalfe Farmers' Market", "Vankleek Hill Farmers' Market", "Front Street Farmers' Market", "Cobourg Farmers' Market", "Almonte Farmers' Market", "Belleville Farmers' Market", "Cobden Farmers' Market", "Ottawa Farmers' Market", "Gananoque Farmers' Market", 'Merrickville Mid-week Market', "New Lowell Farmers' Market - Closed in 2020", "East Gwillimbury Farmers' Market", "Annette Village Farmers' Market - CLOSED IN 2020", "Bolton Farmers' Market - CLOSED IN 2020", "Collingwood Winter Farmers' Market", "Shelburne Farmers' Market - CLOSED IN 2020", 'Stayner Music, Market & Park It - Closed in 2020', "Aberfoyle Farmers' Market - Closed in 2020", "Orillia Fairgrounds Farmers' Market", "Metro Hall Farmers' Market - CLOSED IN 2020", "St. Lawrence Farmers' Market", 'The Harbour Market', 'Bloor.Borden MyMarket', 'East Lynn MyMarket', "Newmarket Farmers' Market", "East York Farmers' Market", 'Trinity Bellwoods Park', "Orangeville Farmers' Market", "Uxbridge Farmers' Market", "The Rockwood Farmers' Market", "Dundas Farmers' Market", "Milton Farmers' Market", 'Innisfil Farmers Market', 'Innisfil Farmers Market Tanger Outlet', "Bradford Farmers' Market", 'Junction Farmers Market', "Orillia Farmers' Market", "Dufferin Grove Farmers' Market", "Cabbagetown Farmers' Market", "Elmvale Farmers' Market", "Meaford Farmers' Market", "Stouffvillle Farmers' Market", "Brampton Farmers' Market", 'Aurora Farmers Market & Artisan Fair', 'Huntsville & District Agricultural Fairgrounds', 'Village Market', "Whitby Farmers' Market", "Clarington Farmers' Market", "Creemore Farmers' Market", 'Burlington Centre Lions Farmers Market', "Georgina Farmers' Market", "Guelph Farmers' Market", "Acton Farmers' Market", "Georgetown Farmers' Market", "Mulmur Farmers' Market", "Nathan Phillips Square Farmers' Market ", "North York Farmers' Market", "Collingwood Downtown Farmers' Market", "Hamilton Farmers' Market", "Southern Georgian Bay Farmers' Markets - Midland Summer Market", "Southern Georgian Bay Farmers' Market - Victoria Harbour Location", "North Oshawa Farmers' Market", "Wasaga Beach Farmers' Market", "Gore Bay Farmers' Market", "Providence Bay Farmers' Market - CLOSED FOR 2020", 'Argyle Farmers Market - Closed in 2020', 'Island Summer Market - Closed in 2020', "Algoma Farmers' Market", "Cloverbelt Country Farmers' Market - Oxdrift Hall", "Cloverbelt Country Farmers' Market - Dryden Arena", "Thunder Bay Farmers' Market - Closed in 2020", 'Mill Market', 'Thunder Bay Country Market', "Northwest Farmers' Market", "North Bay Farmers' Market", "Kapuskasing Farmers' Market", "Riverside Farmers' Market", 'The Market', "NEMI Farmers' Market", 'Mountjoy Historical Park', 'Urban Park Market', "Cochrane Farmers' Market", "Powassan Farmers' Market", "Matiowski Farmers' Market", "Downtown Woodstock Farmers' Market", "Exeter Farmers' Market - CLOSED IN 2020", "Point Edward Moonlight Farmers' Market - CLOSED IN 2020", "Kingsville Farmers' Market (Essex location) CLOSED IN 2020", 'Kingsville Farmers Market (Belle River Location) CLOSED IN 2020', "Wingham Farmers' Market - CLOSED IN 2020", "Woodstock Farmers' Market", "Amherstburg Farmers' Market", "Downtown Windsor Farmers' Market", "Wellington North Farmers' Market", 'Hespeler Village Market - Closed in 2020', "Lion's Head Farmers Market", "Elora Farmers' Market", 'Brights Grove Market', "Tillsonburg Farmers' Market", "Ridgeway Farmers' Market", "Kitchener Farmers' Market", "St. Marys Farmers' Market", "Port Colborne Farmers' Market", "Flesherton & District Farmers' Market", "Bayfield Farmers' Market", "Lambton Shores Farmers' Markets - Heritage Museum Location", "Lambton Shores Farmers' Markets - Downtown Forest location", "Ottawa Street Farmers' Market", "Sarnia Farmers' Market", "Port Rowan Farmers' Market", "Farmers' Market of Grimsby", "Niagara Falls Farmers' Market", "CULTIVATE Virtual Farmers' Market", 'The Market @ The Village', 'Dunnville Farmers Market', "Locke Street Farmers' Market", 'Thornbury Farmers Market', "Grand Bend Village Farmers' Market", "Elmira Farmers' Market", "Stevensville Farmers' Market", "Pelham Farmers' Market", 'Covent Garden Market', 'St. Catharines Farmers Market', "Simcoe Farmers' Market", "Wainfleet Farmers' Market", "Owen Sound Farmers' Market", "Welland Farmers' Market", "Cambridge Farmers' Market", "Caledonia Farmers' Market", 'Eat Well Market', "Hamilton Mountain Farmers' Market", "Goderich Farmers' Market", 'Ancaster Farmers Market ', 'Brantford Farmers Market', "Horton Farmers' Market", 'Humber Bay Shores Farmers Market', "Minto Farmers' Market", "Petrolia Farmers' Market", "Stratford Farmers' Market", "Waterdown Farmers' Market - CLOSED IN 2020", "Waterford Farmers' Market - CLOSED IN 2020", "Wiarton Farmers' Market"]
+      var longitude = [43.58876, 43.59892, 43.55811, 43.56978, 43.56714, 43.645065, 43.506548, 43.450126, 43.618174, 43.647919, 43.651813, 43.659349, 43.665667, 43.558018, 43.62996, 43.700268, 43.518942, 43.649565, 43.781209, 43.630358, 43.627845, 45.0166334, 44.5339105, 45.4687231, 45.3151078, 44.6273763, 45.0598458, 45.491646, 45.1297797, 44.5387925, 44.3042542, 45.2876303, 45.4012371, 44.353327, 44.3537761, 44.1594014, 45.427449, 45.0179664, 44.3049393, 44.598715, 45.1576199, 44.7824326, 45.3467087, 45.3640489, 44.2185483, 45.516296, 45.0360888, 43.9486612, 45.1378341, 45.5334961, 46.1009881, 44.1059903, 45.046573, 44.9256252, 45.0738013, 44.8995335, 44.2346102, 44.6511868, 44.4247353, 45.4080814, 45.484661, 44.3061186, 44.3987154, 45.3756315, 45.2294234, 45.5196512, 44.1027724, 43.958319, 45.2243472, 44.163005, 45.622723, 45.4000555, 44.3288309, 44.9157711, 44.3591293, 44.1025537, 43.6591922, 43.8800983, 44.4993929, 44.0788825, 44.41909, 43.4715385, 44.6172049, 43.6460498, 43.6496624, 44.7519315, 43.6653539, 43.6841988, 44.0533284, 43.6911694, 43.6498031, 43.9199334, 44.1094885, 43.6208881, 43.2656704, 43.5281241, 44.2958072, 44.1990319, 44.1107968, 43.6656646, 44.6087487, 43.6505937, 43.667138, 44.5826135, 44.6087764, 43.9709826, 43.6849648, 43.9983245, 45.3377912, 43.8431572, 43.8783163, 43.9144943, 44.3272376, 43.3485131, 44.306219, 43.5423907, 43.6309702, 43.649647, 44.1351022, 43.6534399, 43.7676821, 44.4987371, 43.2589258, 44.751407, 44.7519315, 43.9478626, 44.4796625, 45.9171048, 45.6624468, 45.9224485, 45.8240732, 46.5097907, 49.8150816, 49.7807633, 48.3835849, 46.515504, 48.3973914, 50.0924092, 46.3102001, 49.4208758, 47.5089356, 46.4874325, 45.9803327, 48.4764472, 48.4747024, 49.0689125, 46.0725831, 49.7684046, 43.1311752, 43.3559278, 42.9985147, 42.1747664, 42.2932234, 43.8889834, 43.133995, 42.0610239, 42.314807, 43.9828927, 43.4307914, 44.9889153, 43.684247, 43.0339951, 42.8621339, 42.8836143, 43.4480266, 43.2465677, 42.8848641, 44.2674403, 43.5625268, 43.2513665, 43.0966633, 43.2483124, 42.9675, 42.6216223, 43.1988387, 43.0713376, 42.7791166, 43.2447252, 42.9011467, 43.2524117, 44.5616191, 43.3203177, 43.6003534, 42.9432015, 43.0440752, 42.9825955, 43.1593471, 42.8300582, 42.925755, 44.5638046, 42.9899844, 43.3601589, 43.0613777, 44.1524784, 43.241706, 43.7430544, 43.2228978, 43.1373078, 42.779207, 43.6179734, 43.8343143, 42.8820609, 43.3860179, 43.333314, 42.9334304, 44.7431063]
+      var latitude = [-79.64432, -79.63753, -79.70635, -79.56633, -79.63657, -79.565842, -79.624666, -79.702447, -79.478855, -79.443366, -79.52579, -79.485018, -79.468064, -79.706347, -79.491242, -79.51463, -79.933679, -79.92658, -79.590666, -79.900801, -79.80075, -74.7008819, -78.5466316, -76.6763089, -74.6416067, -75.950458, -77.8566909, -76.076806, -75.7226353, -78.7378717, -78.3193296, -74.8549627, -75.7296679, -78.74151, -78.7650474, -77.8003988, -75.6923646, -75.6480383, -78.3234212, -75.671172, -77.4693299, -78.6516523, -76.0381703, -77.616742, -76.5710169, -75.4055576, -74.742336, -78.2937725, -76.1419465, -77.0986, -77.4877035, -78.9418618, -78.5110668, -78.7594109, -78.7176325, -76.2483872, -76.4908304, -77.8841701, -78.2637799, -75.6774662, -77.67654, -77.7986189, -76.6639129, -75.6675196, -75.4668991, -74.6522016, -77.5765445, -78.170149, -76.1929106, -77.384082, -76.880595, -75.6827317, -76.1647504, -75.8380263, -79.9683648, -79.4423032, -79.484856, -79.737271, -80.2204917, -80.207256, -80.086344, -80.1516423, -79.4670541, -79.3891448, -79.372021, -79.7748852, -79.409795, -79.315742, -79.4564129, -79.3283362, -79.4177201, -80.0944851, -79.1263239, -80.1491416, -79.9576649, -79.866827, -79.6123758, -79.6514386, -79.5834335, -79.4680635, -79.4212151, -79.4307286, -79.3610495, -79.8678068, -80.5914471, -79.245561, -79.7596396, -79.46231, -79.2418451, -79.4616869, -78.9460599, -78.5899015, -80.1061859, -79.7935979, -79.3629251, -80.2483208, -80.0412237, -79.9266068, -80.0294147, -79.3840901, -79.414091, -80.2182028, -79.87032, -79.887753, -79.7748852, -78.850784, -80.0687278, -82.4634063, -82.2632417, -79.9403902, -82.1612253, -84.3343624, -93.0004045, -92.8396958, -89.2485309, -84.345501, -89.2434492, -91.9091538, -79.4647773, -82.4179027, -79.6688775, -80.9920505, -81.9255558, -81.353123, -81.3309851, -81.0335628, -79.3558963, -94.4910371, -80.7492978, -81.4820036, -82.42353, -82.8201603, -82.7117164, -81.3107757, -80.740094, -83.0048384, -83.0383865, -80.7298437, -80.3064731, -81.2523021, -80.4239599, -82.2487569, -80.7319873, -79.0574311, -80.483663, -81.1351235, -79.2521237, -80.5575989, -81.6976571, -81.8148382, -82.0022524, -79.8169165, -82.3969444, -80.4498029, -79.5840749, -79.1243352, -81.1868501, -79.0949104, -79.615667, -79.8872345, -80.4500479, -81.7543906, -80.5590656, -79.0537024, -79.2838218, -81.2503345, -79.2469461, -80.3071672, -79.3834109, -80.9437911, -79.2488171, -80.3134111, -79.9635849, -81.0263658, -79.84867, -81.7111219, -79.9771002, -80.2618827, -81.1856363, -79.4786667, -80.8482694, -82.1464384, -80.9836836, -79.9002428, -80.2962167, -81.1410673]
+      var fAddress = ['300 City Centre Dr, Mississauga, ON L5B 2G6', '4190 Shipp Dr, Mississauga, ON L4Z 2Y8', '2520 Eglinton Ave W, Mississauga, ON L5M 4N7', 'Mississauga, ON L5G 1G3', '3092 Mavis Rd, Mississauga, ON L5C 1T8', '399 The West Mall, Etobicoke, ON M9C 2Y2', '780 Southdown Rd, Mississauga, ON L5J 2Y4', '240 North Service Rd W, Oakville, ON L6M 2Y4', '2240 Humber Bay Park W Trail #227, Etobicoke, ON M8V 1B0', '50 Wabash Ave, Toronto, ON M6R 1N2', 'Toronto, ON M9A 1A8', '680 Annette St, Toronto, ON M6S 2C5', '2960 Dundas St W, Toronto, ON M6P 1Y8', '2520 Eglinton Ave W, Mississauga, ON L5M 0Y4', 'Parking Lot, 194 Park Lawn Rd, Etobicoke, ON M8Y 3J1', '1865 Weston Rd, York, ON M9N 1V9', '8560 Tremaine Rd, Milton, ON L9T 2Y3', '66 Main St S, Georgetown, ON L7G 3G3', '5020 Hwy 7, Woodbridge, ON L4L 1T3', '10636 Eighth Line, Georgetown, ON L7G 4S5', '8605 Heritage Rd, Brampton, ON L6Y 0E3','2 St. Lawrence Dr.Cornwall, ON K6H 4Z1', '47 Mansfield St.Bobcaygeon, ON, ON K0M 1A0', '115 Veterans Memorial Blvd.Renfrew, ON K7V 2R5', 'Glengarry District High School, Main Street North Alexandria, ON K0C 1A0', '36 Main St. E.Athens, ON K0E 1B0', '16 Station St Bancroft, ON K0L1C0', '205 Bayview Drive Constance Bay, ON K0A 3M0', '2397 Roger Stevens Drive North Gower/Ottawa, ON K0A 2T0', '41 Bond Street West Fenelon Falls, ON K0M 1N0', '360 George Street North, Unit 90P eterborough, ON K9H 7E7', '4 Main Street SouthMaxville, ON K0C 1T0', '366 Parkdale AvenueOttawa, ON K1Y 1G8', '207 Kent St WestLindsay, ON K9V 2Y9', '235 Colborne St West Lindsay, ON K9V 6A1', '2992 County Rd. 30 Codrington (Brighton) On, ON K0K 1R0', '55 ByWard Market Square Ottawa, ON K1N 9C3', '200 Sanders Street Kemptville, ON K0G 1J0', 'Louis Street parking lot on Charlotte just east of Aylmer StreetPeterborough, ON K9H 3V8', '280 King Street EastBrockville, ON K6V 1E2', 'Lake Victoria St.Pembroke ON, ON K8A 8E2', '4072 Haliburton County Road 121 Kinmount, ON K0M 2A0', '3790 Carp RoadCarp, ON KOA 1L0', '1007 Mill Street Combermere, ON K0J 1L0', '730 Front Rd Kingston, ON K7M 6P7', 'PO Box 278 Station Main Cumberland, ON K4C 1E6', '"The Brick" parking lot Cornwall, ON K6J 3T8', '58 Queen St Port Hope, ON L1A 1X3', '7 Beckwith St Carleton Place, ON K7C2T1', '8 Foran St, Legion Memorial Field Eganville, ON K0J 1T0', '100 Deep River Rd.Deep River, ON K0J 1P0', '121 Queen St.Port Perry, ON L9L 1E7', '13 York St.Haliburton, ON K0M 1S0', '2048 Fleming RdMinden, ON K0M 2K0', '1095 North Shore RoadAlgonquin Highlands, ON K0M 1J1', 'Crystal Palace and the Tay Basin Perth, ON K7H 1C3', '89 Colborne St. Kingston, ON K7K 1C8', '5723 County Rd 46 Havelock, ON K0L 1Z0', 'P.O. Box 22 Lakefield, ON K0L 2H0', '210 Main Street Ottawa, Ontario, ON K1S 3M1', "Corner of Hwy 62 and Stafford Street, Railway Station Park Barry's Bay, ON K0J 1B0", '66 Front Street South Campbellford, ON K0L 1L0', '4567 Road 38 Harrowsmith, ON K0H 1V0', '1644 Bank Street Ottawa, ON K1V 7Y6', '2821 8th Line Road Metcalfe, ON K0A 2P0', 'PO Box 1320 Vankleek Hill, ON K0B 1R0', '67 Front Street Quinte West, ON K8V 4N3', 'Rotary Park, Albert St.Cobourg, ON K9A 4K2', 'Almonte Public Library Parking Lot, 155 High Street Almonte, ON K0A 1A0', '182 Pinnacle Street between Market & Macannany St.Belleville, ON K0K 2Y0', 'Cobden Agricultural Society, 43 Astrolabe Rd. Cobden, ON K7V 2K8', '1000 Exhibition Way Ottawa, ON K1S 5J3 Ottawa, ON K1S 5B4', '30 King St East Gananoque, ON K7G 1E9', '112 Main Street West Merrickville, ON K0G 1N0', '5212 County Rd. 9 New Lowell, ON L0M 1N0', '19000 Leslie Street Sharon, ON L0G 1V0', 'Runnymede Presbyterian Church Parking Lot @ 680 Annette St. Toronto, ON M6S 2C8', '18 King St. E.Bolton, ON L7E 1E8', '140 Maple Street Collingwood, ON L9Y2P8', 'First Avenue Shelburne, ON L9V 3L4', '220 Huron St.Stayner, ON L0M 1S0', '23 Brock Rd. S.Puslinch, ON N0B 2J0', '4500 Fairgrounds Road, ODAS Park Orillia, ON L3V 6H2', '55 John Street (King & John) Toronto, ON L4G 7B9', '92 Front Street East Toronto, ON M5E 1C4', "Veterans' Lane Victoria Harbour, ON L0K 2A0", '365 Lippincott Street Toronto, ON M5S 1Y5', '1949 Danforth Avenue Toronto, ON M4C 1J4', '200 Doug Duncan Drive Newmarket, ON L3Y 3Y9', 'East York Civic Centre, NW corner of Mortimer & Coxwell Toronto, ON M4C 4K7', '1053 Dundas Street West Toronto, ON M6J 1X1', 'Second Street at Broadway Orangeville, ON L9W 1H9', 'The Second Wedge Brewing Co. Uxbridge, ON L9P 1B1', '120 Rockmosa Drive Rockwood, ON N0B 2K0', "Hatt Street & Miller's Lane Dundas, ON L9H 6Y6", 'Main St., between Martin & James Milton, ON L9T 1P1', '7315 Yonge Street Innisfil, ON L9S 4V7', '3311 Simcoe HWY 89 Cookstown, ON, ON L0L 1L0', '425 Holland Street West Bradford, ON L3Z 0J2', '2960 Dundas Street West Toronto, ON M6P 1Y8', '24 Market Street Orillia, ON L3V 3C9', '270 Gladstone Avenue Toronto, ON M6J 3L6', '201 Winchester St Toronto, ON M4X 1B8', '33 Queen Street West Elmvale, ON L0L 1P0', '27 Collingwood Street East Meaford, ON N4L 1N9', '19 Civic Avenue Stouffville, ON L4A 1W4', '2 Wellington Street West Brampton, ON L6Y 4R2', '49 Wells Street Aurora, ON L4G 6S6', '407 Ravenscliffe Rd. Huntsville ON, ON P1H 1E7', '9100 Bathurst Street Thornhill, ON L4J 8C7', '405 Dundas Street W Whitby, ON L1N 6A1', '103 Caroline Street West Newcastle, ON, ON L1B 1H1', 'PO Box 2081 Creemore, ON, ON L0M 1G0', '777 Guelph Line Burlington, ON L7R 4L6', '20849 Dalton RoadSutton, West, ON L0E 1R0', '2-4 Gordon St. @ Waterloo Ave.Guelph, ON N1H 3A1', '19 Willow Street North Acton, ON L7J 1Z6', 'Main Street South (between Church St and James St)Georgetown, ON L7G 3H7', '936215 Airport Rd,Mulmur, ON L9V 0L3', 'Toronto City HallToronto, ON M5H 2N2', 'Mel Lastman SquareNorth York, ON M2N 5V7', 'Second & Pine Street parking lot Collingwood, ON L9Y 3Z4', '35 York Blvd.Hamilton, ON L8R 3K1', '526 Bay Street Midland, ON L4R 1L3', "Veteran's Lane Victoria Harbour, ON L0K 2A0", 'Delpark Homes Centre Oshawa, ON L1H 7K5', '1724 Mosley Street Wasaga Beach, ON L9Z 1A1', '15 Water Street Gore Bay, ON P0P 1H0', '5617 Hwy 551 Providence Bay, ON P0P 1T0', 'Hilltop Road Arnstein, ON P0H 1A0', "66 Highway 551 M'Chigeeng Manitoulin Island, ON P0P 1G0", '70 Foster Drive Sault Ste. Marie, ON P6A 6V2', '18946 Hwy 17O xdrift, ON P0V 2J0', '84 Whyte Avenue Dryden, ON P8N 1Z5', 'Victoriaville Centre Mall Thunder Bay, ON P7A5H8', '35 Canal Drive Sault Ste Marie, ON P6A 5P9', '425 Northern Ave Thunder Bay, ON P7C 2V7', '11 First Avenue S Sioux Lookout, ON P8T 1A8', '165 Oak StreetNorth Bay, ON P1B 1A2', '4 Ash Street Kapuskasing, ON P5N 2C8', '55 Riverside Drive New Liskeard, ON P0J 1P0', '233 Elgin St.Sudbury, ON P3A 5P3', 'Water Street, behind Bank of Montreal Little Current, ON P0P 1K0', '600 Riverside Dr Timmins, ON P4N 8G9', 'Downtown Timmins Timmins, ON P4N 2C9', '385 First Avenue Cochrane, ON P0L 1C0', "76 Main Street, beside 'The Beer Store'Powassan, ON P0H 1Z0", 'Whitecap PavilionKenora, ON P9N 3P8', 'Dundas Street, Woodstock, ON, ON N4S 6J5', '1-35 MacNaughton Drive Exeter, ON N0M 1S0', 'Adjacent to Michigan Avenue (Under Bluewater Bridge) Point Edward, ON N7T 5A1', '1 Station Street Essex, Ontario, ON N8M 2L1', '705 North Dame Street Belle River, ON N0P 1A0', '360 Josephine St.Wingham, ON N0G2W0', 'Woodstock Fairgrounds, 875 Nellis Street Woodstock, ON N4S 4C6', '8728 Howard Ave Amherstburg, Ontario, ON N9V 0C8', 'Pelissier and Maiden Lane Windsor, ON N9A 4L2', 'Victory Community Centre, 320 King Street, EastMount Forest, ON N0G 2L0', '16 Kribs Street Cambridge, ON N3C 2E1', "1 Philip Forbes StreetLion's Head, ON N0H 1W0", '127 East Mill StreetElora, ON N0B 1S0', 'Kenwick on the Lake Park Brights Grove, ON N0N 1C0', '41 Bridge Street West Tillsonburg, ON N4G 5P2', 'P.O. Box 766Ridgeway (Fort Erie), ON L0S 1N0', '300 King St E.Kitchener, ON N2G 2L3', '25 South Service RoadSt. Marys, ON N4X 1A7', '66 Charlotte StreetPort Colborne, ON L3K 3C8', '774107 ON-10 Flesherton, ON N0C 1E0', 'Clan Gregor Square Bayfield, ON., ON N0M 1G0', '10035 Museum Road Grand Bend, ON N0M 1T0', 'King St. WForest, ON N0N 1J0', '3 Britannia ave Hamilton, ON L8H 3Z5', 'Cor. Proctor & Ontario StSarnia, Ontario, ON N7T 3G2', 'Lions Pavilion - Sea Queen Rd.Port Rowan, ON N0E 1M0', '162 Livingston Ave Grimsby, ON L3M 5P7', '7150 Montrose Road Niagara Falls, ON, ON L2H 3N3', '745 Talbot St.St. Thomas, ON N5P 1E3', '111 Garrison Village Dr Niagara on the Lake, ON L0S 1J0', '240 Main St., behind the Beer Store Dunnville, ON N1A 1K3', '260 Locke Street South and 270 Locke Street South Hamilton, ON L8P 4B9', '30 Mill Street Thornbury, ON N0H 2P0', '70671 Bluewater Hwy. Grand Bend, ON N0M 1T0', 'On Maple St. behind Home Hardware Elmira, ON N3B 2Z3', '2508 Stevensville Road Stevensville, Ontario, ON L0S 1S0', '20 Pelham Town Square Fonthill, ON L0S 1E0', '130 King Street London, ON N6A1C5', '50 Church St. St. Catharines, ON L2R 7C2', '172 South Drive Simcoe, ON, ON N3Y 2V5', '32081 Dayboll Lane Wainfleet, ON L0S 1V0', '88 8th Street East Owen Sound, ON N4K 1K8', '70 Young Street Welland, ON L3B 6A6', '40 Dickson Street Cambridge, Ontario, ON N1R 5W8', '365 Argyle St South Caledonia, ON N3W 2N2', '342 10th St Hanover, ON N4N 1P4', '252 Mountain Park Avenue Hamilton, ON L8V 2S4', '1 Courthouse Square Goderich, ON N7A 1M2', '37 Halson Street Ancaster, ON L9G 2B9', '79 Icomm Drive Brantford, ON N3S 7N9', '10 - 16 Manitoba Street St. Thomas, ON N5P 3A1', 'Humber Bay park West Toronto, ON M8V3X7', 'N0G 2P0 Palmerston, ON N0G 2P0', '369 Fletcher Street, Behind the Public Library (Main Street)Petrolia, ON N0N 1R0', '353 McCarthy Road, Rotary Complex/AgriplexStratford, ON, ON N5A 7S7', '79 Hamilton St North Waterdown, ON L0R 2H0', '121 Alice St.Waterford, ON N0E1Y0', '594 Berfords Street Wiarton, ON N0H 2T0']
+
+      function loadMapScenario() {
+          var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
+          infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
+              visible: false
+          });
+          infobox.setMap(map);
+          for (var i = 0; i < longitude.length; i++) {
+              var pin = new Microsoft.Maps.Location(longitude[i], latitude[i]);
+              var pushpin = new Microsoft.Maps.Pushpin(pin,
+                  {title: names[i]}
+              );
+              pushpin.metadata = {
+                  title: names[i],
+                  description: fAddress[i]
+              }; 
+              Microsoft.Maps.Events.addHandler(pushpin, 'click', pushpinClicked);
+              map.entities.push(pushpin);
+          }
+          map.setView({
+            mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+          });
+      }; 
+      function pushpinClicked(e) {
+          if (e.target.metadata) {
+              infobox.setOptions({
+                  location: e.target.getLocation(),
+                  title: e.target.metadata.title,
+                  description: e.target.metadata.description,
+                  visible: true
+              });
+          }
+      }
+  </script>
+<!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+        </div>
+        <div class="col-lg-6">
+          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+            <a href="../index.html" class="scrollto">Home</a>
+            <a href="#about" class="scrollto">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
+
